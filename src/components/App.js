@@ -3,7 +3,8 @@ import React, {useEffect, useState} from "react";
 const FilterByBodyPart = () => { 
   const [bodyParts, setBodyParts] = useState([])
 
-  fetch('https://exercisedb.p.rapidapi.com/exercises/bodyPartList',{
+  useEffect(()=> {
+    fetch('https://exercisedb.p.rapidapi.com/exercises/bodyPartList',{
 	    method: 'GET',
 	    headers: {
 		    'X-RapidAPI-Key': 'd44ca9abf0msh20ad5caa52fd555p17b31djsn05d5cbbdd215',
@@ -13,13 +14,24 @@ const FilterByBodyPart = () => {
 	.then(response => response.json())
 	.then(response => setBodyParts(response))
 	.catch(err => console.error(err))
+  },[])
+  
 
   const targets = bodyParts.map((item, index) => {
-    return <button key={index} style={{fontSize:"15px", background:"black", color:"white"}}>{item}</button>
+    return <button 
+    key={index} 
+    style={{
+      fontSize:"15px", 
+      background:"black", 
+      color:"white",
+      padding:"15px",
+      cursor:"pointer",
+      margin:"2px"
+    }} >{item}</button>
   })
 
   return (
-    <section style={{display:"flex", flexDirection:"column"}}>
+    <section style={{display:"flex", flexDirection:"column", background:"maroon"}}>
       {targets}
     </section>
   )
@@ -46,11 +58,22 @@ const FilterByBodyPart = () => {
   // )
 }
 
+const SearchBar = () => {
+  return (
+    <div style={{padding:"15px", textAlign:"center"}}>
+      <form>
+        <input type="search" placeholder="search" style={{fontSize:"25px"}} ></input>
+      </form>
+    </div>
+    
+  )
+}
+
 const NavBar = () => {
   return (
-    <div>
-     <p>HOME</p>
-     <p>WORKOUTS</p>
+    <div style={{display:"flex", padding:"2px", justifyContent:"center", fontFamily:"'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"}}>
+     <h4 style={{padding:"15px"}}>Home</h4>
+     <h4 style={{padding:"15px"}}>Workouts</h4>
     </div>
     
   )
@@ -77,7 +100,7 @@ function App() {
   return (
     <div className="w-screen">
       <NavBar />
-      <header>Hello</header>
+      <SearchBar />
       <FilterByBodyPart />
     </div>
   );
