@@ -23,14 +23,17 @@ const BodyPartsList = () => {
           <button 
             key={index} 
             style={{
-            fontSize:"15px", 
-            background:"black", 
+            fontSize:"15px",
+            background:"gray",
             color:"white",
             padding:"15px",
             cursor:"pointer",
             margin:"2px",
-            width:"300px"
-              }}
+            width:"300px", 
+            border:"none"    
+              }} 
+            onMouseOver={(e)=> e.target.style.background = "#D3D3D3"} 
+            onMouseOut={(e)=> e.target.style.background = "gray" } 
             onFocus={e=> console.log(e.target.textContent)} >{item}</button>
         </div>
       
