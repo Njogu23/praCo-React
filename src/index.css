@@ -1,3 +1,21 @@
-@tailwind base;
-@tailwind component;
-@tailwind utilities;
+body {
+    background-color: black;
+    font-family:'Courier New', Courier, monospace;
+}
+
+nav a {
+    color:white;
+    border: none;
+    padding: 30px;
+}
+
+nav a:hover {
+    background-color: gold;
+    color: black;
+}
+
+nav a.active {
+    background-color: gold;
+    color: black;
+}
+
