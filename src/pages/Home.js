@@ -1,11 +1,13 @@
 import React from "react";
-import App from "../components/App";
+import NavBar from "../components/NavBar";
+import SearchBar from "../components/SearchBar";
 
 const Home = () => {
     return (
-        <>
-          <App />
-        </>
+        <div style={{background:"indigo"}}>
+          <NavBar />
+          <SearchBar />
+        </div>
     )
 }
 
