@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 const NavBar = () => {
     return (
-      <nav style={{display:"flex", justifyContent:"center" }}>
+      <nav >
        <NavLink  exact to="/" >Home</NavLink>
        <NavLink to="/workouts" >Workouts</NavLink>
        <NavLink to="/challenge" >Challenge</NavLink>

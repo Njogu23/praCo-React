@@ -9,6 +9,11 @@ nav a {
     padding: 30px;
 }
 
+nav {
+    justify-content: center;
+    display: flex;
+}
+
 nav a:hover {
     background-color: gold;
     color: black;
