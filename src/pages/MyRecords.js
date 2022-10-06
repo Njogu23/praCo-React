@@ -2,7 +2,8 @@ import React from "react";
 
 const MyRecords = () => {
     return (
-        <table className="table table-bordered">
+        <div>
+            <table className="table table-bordered table-striped table-light">
             <thead>
                 <tr>
                     <th >
@@ -22,7 +23,9 @@ const MyRecords = () => {
             <tbody>
 
             </tbody>
-        </table>
+            </table>
+        </div>
+        
     )
 }
 
