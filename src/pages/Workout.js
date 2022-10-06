@@ -1,10 +1,10 @@
 import React from "react";
 import BodyPartsList from "../components/BodyPartList";
 
-const Workout = () => {
+const Workout = ({workouts}) => {
     return(
         <div style={{color:"black"}}>
-            <BodyPartsList />
+            <BodyPartsList workouts={workouts}/>
         </div>
     )
 }

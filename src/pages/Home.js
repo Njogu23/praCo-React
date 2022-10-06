@@ -1,13 +1,13 @@
 import React from "react";
-import App from "../components/App";
+import SearchBar from "../components/SearchBar";
 
-const Home = () => {
+const Home = ({workouts}) => {
     return (
         <div style={{background:"grey"}}>
           <header style={{textAlign:'center'}}>
             <h1 style={{color:'white', fontSize:"100px"}}>praCo.</h1>
           </header>
-          <App />
+          <SearchBar workouts={workouts} />
         </div>
     )
 }

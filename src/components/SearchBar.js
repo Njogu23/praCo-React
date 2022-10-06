@@ -30,7 +30,7 @@ const SearchBar = ({workouts}) => {
   
     return (
       <div style={{padding:"15px", textAlign:"center"}}>
-        <input type="search" placeholder="search" style={{fontSize:"25px", border:"none", borderRadius:"12px"}} onChange={handleSearch}></input>
+        <input type="search" placeholder="search for workout..." style={{fontSize:"25px", border:"none", borderRadius:"12px"}} onChange={handleSearch}></input>
         <>{workout}</>
       </div>
       
