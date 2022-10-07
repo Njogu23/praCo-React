@@ -6,15 +6,15 @@ const SearchBar = ({workouts}) => {
 
   const searchResult = workouts.filter(item => {
     if(search === ""){
-      return null
+      return false
     }else{
       return item.name.toLowerCase().includes(search.toLowerCase())
     }
   })
 
-  const workout = searchResult.map(item => {
+  const workout = searchResult.map((item, index) => {
     return (
-      <section key={item.id} style={{padding:"2px", border:"solid", borderRadius:"8px"}}>
+      <section key={index} style={{padding:"2px", border:"solid", borderRadius:"8px"}}>
         <h2>{item.name}</h2>
         <img src={item.gifUrl} alt={item.name}></img>
         <p>target muscle : {item.target}</p>

@@ -7,10 +7,7 @@ const Challenge = ({workouts, bodyPartList}) => {
     const bodyWeightWorkouts = workouts.filter(item => item.equipment === "body weight")
     const challenge = bodyWeightWorkouts.filter(item => item.bodyPart === target)
 
-    const handleFilterByBodyWeight = (e) =>  {
-        setTarget(e.target.textContent)
-        setRandomChallenge(workout[Math.floor(Math.random()*workout.length)])
-    }
+    
 
     const handleDelete = () => {
         setRandomChallenge(null)
@@ -26,6 +23,13 @@ const Challenge = ({workouts, bodyPartList}) => {
           </section>
         )
       })
+
+      const handleFilterByBodyWeight = (e) =>  {
+        setTarget(e.target.textContent)
+        setRandomChallenge(workout[Math.floor(Math.random()*workout.length)])
+    }
+
+      
  
 
     const targets = bodyPartList.map((item, index) => {

@@ -1,0 +1,28 @@
+{
+  "records": [
+    {
+      "id": 1,
+      "date": "2022-01-01",
+      "exercise": "push-ups",
+      "target": "chest",
+      "sets": "5",
+      "reps": "10"
+    },
+    {
+      "date": "2022-10-07",
+      "exercise": "push-ups",
+      "target": "chest",
+      "sets": "3",
+      "reps": "10",
+      "id": 2
+    },
+    {
+      "date": "2022-10-08",
+      "exercise": "squats",
+      "target": "quads",
+      "sets": "3",
+      "reps": "10",
+      "id": 3
+    }
+  ]
+}
