@@ -22,7 +22,7 @@ const MyRecords = () => {
 
         const handleSubmit = (e) => {
             e.preventDefault()
-            fetch("http://localhost:3000/records", {
+            fetch("https://praco-api.herokuapp.com/records", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const MyRecords = () => {
         }
 
     useEffect(()=> {
-        fetch("http://localhost:3000/records")
+        fetch("https://praco-api.herokuapp.com/records")
         .then(res => res.json())
         .then(data => setData(data))
         .catch(err => console.error(err))
