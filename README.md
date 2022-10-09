@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# PraCo.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Author: George Njogu
 
-## Available Scripts
+### Project Description
 
-In the project directory, you can run:
+Praco is web application that gives you access to over 1300 workout routines from a public API, ExcerciseDB, that you can do at home and at the gym.
+The purpose of the application is to give you an idea of how to properly do a workout without exposing yourself to possible injury because of bad form as it has been the case in many occassions.
+The project has four that serve different goals;
+## Home Page
 
-### `npm start`
+The home page has a search section where you can search for any type of workout that you would want to do.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Workout Page
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The workout page has different buttons targeting different body parts that the workout targets.
 
-### `npm test`
+## Challenge Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Challenge page gives you a random workout on a specific area of target on click.
 
-### `npm run build`
+## My Records
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This page has a form the you can use to record your daily workouts.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - HTML
+  - CSS
+  - JavaScript
+  - React
 
-### `npm run eject`
+## GitPages Link
+  https://njogu23.github.io/praCo-react/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contact
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have any question or feedback about the project, please reach out to me via;
+#### Email: njogugeorge.gn@gmail.com
