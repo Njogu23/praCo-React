@@ -1,76 +1,55 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import "./BodyPartsList.css";
 
+const BodyPartsList = ({ workouts, bodyPartList }) => {
+  const [targetWorkouts, setTargetWorkouts] = useState("");
 
-const BodyPartsList = ({workouts, bodyPartList}) => { 
-    const [targetWorkouts, setTargetWorkouts] = useState("")
+  const filterByBodyPart = workouts.filter(item => item.bodyPart === targetWorkouts);
 
-    const filterByBodyPart = workouts.filter(item => item.bodyPart === targetWorkouts)
-    
-    
-    const workout = filterByBodyPart.map((item, index) => {
-      return (
-        <section key={index} style={{padding:"2px", border:"solid", borderRadius:"8px"}}>
-          <h2>{item.name}</h2>
-          <img src={item.gifUrl} alt={item.name}></img>
-          <p>target muscle : {item.target}</p>
-          <p>equipment : {item.equipment}</p>
-        </section>
-      )
-    })
+  const handleWorkouts = (selectedBodyPart) => {
+    setTargetWorkouts(selectedBodyPart);
+  };
 
-    const handleWorkouts = (e) => {
-      setTargetWorkouts(e.target.textContent)
-     
-    }
+  const handleDelete = () => {
+    setTargetWorkouts("");
+  };
 
-    const handleDelete = () => {
-      setTargetWorkouts(null)
-    }
-    
-    
-  
-    const targets = bodyPartList.map((item, index) => {
-      return (
-        <div style={{textAlign:"center"}} key={index} >
-          <button 
-            style={{
-            fontSize:"15px",
-            background:"gray",
-            color:"white",
-            padding:"15px",
-            cursor:"pointer",
-            margin:"2px",
-            width:"300px", 
-            border:"none"    
-              }} 
-            onMouseOver={(e)=> e.target.style.background = "#D3D3D3"} 
-            onMouseOut={(e)=> e.target.style.background = "gray" } 
-            onFocus={handleWorkouts}>{item}</button>
-            <button
-            style={{
-              fontSize:"15px",
-              background:"gray",
-              color:"white",
-              padding:"15px",
-              cursor:"pointer",
-              margin:"2px",
-              border:"none" 
-              }} 
-              onMouseOver={(e)=> e.target.style.background = "#D3D3D3"} 
-              onMouseOut={(e)=> e.target.style.background = "gray" } 
-              onClick={handleDelete} >x</button>
-            {workout}
+  const workoutButtons = bodyPartList.map((item, index) => (
+    <div key={index} className="button-wrapper">
+      <button
+        className={`workout-button ${targetWorkouts === item ? "active" : ""}`}
+        onClick={() => handleWorkouts(item)}
+      >
+        {item}
+      </button>
+      <button
+        className="delete-button"
+        onClick={handleDelete}
+      >
+        &times;
+      </button>
+
+      {targetWorkouts === item && filterByBodyPart.length > 0 && (
+        <div className="workout-results">
+          <h3>Workouts for: {targetWorkouts}</h3>
+          {filterByBodyPart.map((workoutItem, workoutIndex) => (
+            <section key={workoutIndex} className="workout-info">
+              <h2>{workoutItem.name}</h2>
+              <img src={workoutItem.gifUrl} alt={workoutItem.name} />
+              <p><strong>Target muscle:</strong> {workoutItem.target}</p>
+              <p><strong>Equipment:</strong> {workoutItem.equipment}</p>
+            </section>
+          ))}
         </div>
-      
-      )
-    })
-  
-    return (
-      <section style={{display:"flex", flexDirection:"column", background:"maroon"}}>
-        {targets}
-      </section>
-    )
-   
-  }
+      )}
+    </div>
+  ));
+
+  return (
+    <section className="bodyparts-container">
+      {workoutButtons}
+    </section>
+  );
+};
 
 export default BodyPartsList;

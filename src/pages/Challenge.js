@@ -1,78 +1,67 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import "./Challenge.css"; // Ensure to import the CSS file
 
-const Challenge = ({workouts, bodyPartList}) => { 
-    const [target, setTarget] = useState("")
-    const [randomChallenge, setRandomChallenge] = useState("")
+const Challenge = ({ workouts, bodyPartList }) => {
+  const [target, setTarget] = useState("");
+  const [randomChallenge, setRandomChallenge] = useState(null);
 
-    const bodyWeightWorkouts = workouts.filter(item => item.equipment === "body weight")
-    const challenge = bodyWeightWorkouts.filter(item => item.bodyPart === target)
+  // Filter workouts that use body weight
+  const bodyWeightWorkouts = workouts.filter(item => item.equipment === "body weight");
 
-    
+  // Filter body weight workouts by the selected body part
+  const filteredChallenges = bodyWeightWorkouts.filter(item => item.bodyPart === target);
 
-    const handleDelete = () => {
-        setRandomChallenge(null)
-      }
+  const handleDelete = () => {
+    setRandomChallenge(null); // Reset the random challenge
+  };
 
-    const workout = challenge.map((item, index) => {
-        return (
-          <section key={index} style={{padding:"2px", border:"solid", borderRadius:"8px", color:"black"}}>
-            <h2>{item.name}</h2>
-            <img src={item.gifUrl} alt={item.name}></img>
-            <p>target muscle : {item.target}</p>
-            <p>equipment : {item.equipment}</p>
-          </section>
-        )
-      })
+  const handleFilterByBodyWeight = (selectedBodyPart) => {
+    setTarget(selectedBodyPart);
 
-      const handleFilterByBodyWeight = (e) =>  {
-        setTarget(e.target.textContent)
-        setRandomChallenge(workout[Math.floor(Math.random()*workout.length)])
+    // Get a random workout from the filtered challenge list
+    if (filteredChallenges.length > 0) {
+      const randomIndex = Math.floor(Math.random() * filteredChallenges.length);
+      setRandomChallenge(filteredChallenges[randomIndex]);
+    } else {
+      setRandomChallenge(null);
     }
+  };
 
-      
- 
-
-    const targets = bodyPartList.map((item, index) => {
-        return (
-          <div style={{textAlign:"center", backgroundColor:"#0067A5"}} key={index} >
-            <button 
-              style={{
-              fontSize:"15px",
-              backgroundColor:"#0ABAB5",
-              color:"white",
-              padding:"15px",
-              cursor:"pointer",
-              margin:"2px",
-              width:"300px", 
-              border:"none"    
-                }} 
-              onMouseOver={(e)=> e.target.style.background = "#00FFEF"} 
-              onMouseOut={(e)=> e.target.style.background = "#0ABAB5" } 
-              onClick={handleFilterByBodyWeight}>{item}</button>
+  return (
+    <div className="challenge-container">
+      <h1 className="challenge-heading">Daily Home Workout Challenges for Bodyweights</h1>
+      <div className="challenge-content">
+        <div className="button-container">
+          {bodyPartList.map((item, index) => (
+            <div className="button-wrapper" key={index}>
               <button
-              style={{
-                fontSize:"15px",
-                background:"#0ABAB5",
-                color:"white",
-                padding:"15px",
-                cursor:"pointer",
-                margin:"2px",
-                border:"none" 
-                }} 
-                onMouseOver={(e)=> e.target.style.background = "#00FFEF"} 
-                onMouseOut={(e)=> e.target.style.background = "#0ABAB5" } 
-                onClick={handleDelete} >x</button>
-                {randomChallenge}
-          </div>
-        
-        )
-      })
-    return (
-        <div>
-            {targets}
+                className="filter-button"
+                onClick={() => handleFilterByBodyWeight(item)}
+              >
+                {item}
+              </button>
+              {target === item && randomChallenge && (
+                <div className="challenge-info-container">
+                  <section className="challenge-info">
+                    <button
+                      className="delete-button"
+                      onClick={handleDelete}
+                    >
+                      &times;
+                    </button>
+                    <h2>{randomChallenge.name}</h2>
+                    <img src={randomChallenge.gifUrl} alt={randomChallenge.name} className="challenge-image" />
+                    <p><strong>Target muscle:</strong> {randomChallenge.target}</p>
+                    <p><strong>Equipment:</strong> {randomChallenge.equipment}</p>
+                  </section>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
-        
-    )
-}
+      </div>
+    </div>
+  );
+};
 
 export default Challenge;

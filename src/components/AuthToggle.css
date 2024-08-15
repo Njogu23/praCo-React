@@ -1,0 +1,16 @@
+.auth-toggle-container {
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  .auth-toggle-container.active {
+    background-color: #11e795; /* Light gray for sign-in */
+  }
+  
+  .auth-toggle-container.inactive {
+    background-color: #13c3f8; /* Light cyan for sign-up */
+  }
+  
+  .auth-toggle-button:hover {
+    background-color: #0b8ee6; /* Darker shade on hover */
+  }
+  

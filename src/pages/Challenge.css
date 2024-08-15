@@ -1,0 +1,133 @@
+/* Challenge.css */
+
+.challenge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+  }
+  
+  .challenge-heading {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .challenge-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filter-button {
+    background-color: #0ABAB5;
+    color: white;
+    font-size: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .filter-button:hover {
+    background-color: #00FFEF;
+  }
+  
+  .challenge-info-container {
+    width: 100%;
+  }
+  
+  .challenge-info {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .challenge-image {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .challenge-info p {
+    margin: 10px 0;
+  }
+  
+  .delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    right: 30px ;
+  }
+  
+  .delete-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .challenge-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .challenge-heading {
+      font-size: 1.5rem;
+    }
+  
+    .filter-button {
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+  
+    .challenge-info {
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .challenge-heading {
+      font-size: 1.2rem;
+    }
+  
+    .filter-button {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+  
+    .challenge-info {
+      padding: 8px;
+    }
+  }
+  
